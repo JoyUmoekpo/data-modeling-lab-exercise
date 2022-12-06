@@ -42,7 +42,7 @@ occasions
     - time
     - recipe_id references users(recipe_id)
 
-grocery lists 
+grocery list
     - grocerylist_id references users(grocerylist_id)
     - ingredient_id references ingredients(ingredients_id)
 
@@ -69,3 +69,55 @@ Part 3 - Relationships
 - Many-to-many
     - recipes
     - ingredients
+
+
+Part 2 Step 2 - Columns
+
+users 
+    - user_id: We're storing this data because we want each user to have their unique id and this is an integer data type because it is a number. 
+
+    - email: We're storing this data because it is a part of the login process and it is a varchar because it uses letters/characters/numbers.
+
+    - password: We're storing this data because it is a part of the login process and it is a varchar because it uses letters/characters/numbers. 
+
+    - recipe_id: We're storing this data because the recipes need their own unique id number and it would be a number (or integer).
+
+    - grocerylist_id: We're storing this data because the grocery list id would be a unique number to the user and it would be a number. So, it must be an integer.
+
+    - occasions_id: We're storing this data because each occasion is unique to a user and it is a number. So, it would be an integer.
+
+recipes 
+    - recipe_id references users(recipe_id): We're storing this data because the recipes need their own unique id number and it would be a number (or integer).
+
+    - recipe_name: We're storing this data because it will a name defined by the user and it uses letters/characters/numbers. So, it is a varchar.
+
+    - ingredients_id references ingredients(ingredients_id): We're storing this data because each ingredient is unique and needs its own id number. This is a number. So, it would be an integer.
+
+    - instructions: We're storing this data because the recipes need steps. These use letters/characters/numbers. So, it is a varchar.
+
+    - prep_time: We're storing this data because recipes usually include a prep time and it is a number (or an integer).
+
+    - security: We're storing this data because some users may not want all recipes to be public. It uses letters/characters/numbers. So, it is a varchar.
+
+ingredients 
+    - ingredients_id: We're storing this data because each ingredient is unique and needs its own id number. This is a number. So, it would be an integer.
+
+    - name: We're storing this data because it will have a unique name and it uses letters/characters/numbers. So, it is a varchar.
+
+    - measurements: We're storing this data because ingredient require measurements. This would be a number for each ingredient. So, it would be an integer.
+
+occasions 
+    - occasions_id references users(occasions_id): We're storing this data because each occasion is unique to a user and it is a number. So, it would be an integer.
+
+    - name:  We're storing this data because it will a name defined by the user and it uses letters/characters/numbers. So, it is a varchar.
+
+    - date: We're storing this data because the occasion have dates and uses the date data type for its format.
+
+    - time: We're storing this data because the occasion will be an a certain time. This will use the time data type.
+
+    - recipe_id references users(recipe_id): We're storing this data because the recipes need their own unique id number and it would be a number (or integer).
+
+grocery list
+    - grocerylist_id references users(grocerylist_id):We're storing this data because the grocery list id would be a unique number to the user and it would be a number. So, it must be an integer.
+    
+    - ingredient_id references ingredients(ingredients_id): We're storing this data because each ingredient is unique and needs its own id number. This is a number. So, it would be an integer.
