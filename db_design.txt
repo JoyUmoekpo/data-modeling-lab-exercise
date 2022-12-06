@@ -14,12 +14,27 @@ users can create their own occasions and assign recipes to occasions
 
 Brainstorming
 
-users - user_id - email - password - recipe_id - grocery_list_id - occasions_id
+users 
+    - user_id 
+    - email 
+    - password 
+    - recipe_id 
+    - grocerylist_id 
+    - occasions_id
 
-recipes - recipe_id references users(recipe_id) - ingredients_id references () - instructions - security?
+recipes 
+    - recipe_id references users(recipe_id) 
+    - ingredients_id references ingredients(ingredients_id) 
+    - instructions
+    - security
 
-ingredients - ingredients_id
+ingredients 
+    - ingredients_id
 
-occasions - id - recipe id
+occasions 
+    - occasions_id references users(occasions_id)
+    - recipe_id references users(recipe_id)
 
-grocery lists - user id - ingredient id
+grocery lists 
+    - grocerylist_id references users(grocerylist_id )
+    - ingredient_id references ingredients(ingredients_id)
