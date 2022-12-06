@@ -1,0 +1,25 @@
+Features
+
+users can sign into the app with their email and password
+
+users can create recipes with ingredients and instructions
+
+recipes can be marked as public or private
+
+users can view other people’s recipes
+
+ingredients from recipes can be added to user’s grocery lists
+
+users can create their own occasions and assign recipes to occasions
+
+Brainstorming
+
+users - user_id - email - password - recipe_id - grocery_list_id - occasions_id
+
+recipes - recipe_id references users(recipe_id) - ingredients_id references () - instructions - security?
+
+ingredients - ingredients_id
+
+occasions - id - recipe id
+
+grocery lists - user id - ingredient id
