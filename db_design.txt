@@ -12,7 +12,7 @@ ingredients from recipes can be added to user’s grocery lists
 
 users can create their own occasions and assign recipes to occasions
 
-Brainstorming
+Part 1 - Brainstorming
 
 users 
     - user_id 
@@ -23,18 +23,37 @@ users
     - occasions_id
 
 recipes 
-    - recipe_id references users(recipe_id) 
+    - recipe_id references users(recipe_id)
+    - recipe_name 
     - ingredients_id references ingredients(ingredients_id) 
     - instructions
+    - prep_time
     - security
 
 ingredients 
     - ingredients_id
+    - name
+    - measurements
 
 occasions 
     - occasions_id references users(occasions_id)
+    - name
+    - date
+    - time
     - recipe_id references users(recipe_id)
 
 grocery lists 
-    - grocerylist_id references users(grocerylist_id )
+    - grocerylist_id references users(grocerylist_id)
     - ingredient_id references ingredients(ingredients_id)
+
+Part 2 - Table Ideas
+
+users: This table will hold information for the users. Each row will have the user's id, email, password, the id of their recipes, their grocery list id, and the id of their occasions.
+
+recipes: This table will hold information for the user's recipes. Each row will have the recipe's id, name, ingredients, instructions, prep time, and security settings.
+
+ingredients: This table will hold information for the ingredients. Each row will have the recipe's ids, their names, and their measurements.
+
+occasions: This table will hold information for the occasions. Each row will have the occasion's id, name, date, time, and the recipes that would be used.
+
+grocery_lists: This table will hold information for the grocery_lists. Each row will have the grocery list id and the ingredients on the grocery list.
