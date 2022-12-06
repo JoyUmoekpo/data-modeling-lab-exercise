@@ -57,3 +57,15 @@ ingredients: This table will hold information for the ingredients. Each row will
 occasions: This table will hold information for the occasions. Each row will have the occasion's id, name, date, time, and the recipes that would be used.
 
 grocery_lists: This table will hold information for the grocery_lists. Each row will have the grocery list id and the ingredients on the grocery list.
+
+Part 3 - Relationships
+
+- One-to-one
+    - 
+- One-to-many
+    - users
+    - occasions
+    - grocery lists
+- Many-to-many
+    - recipes
+    - ingredients
