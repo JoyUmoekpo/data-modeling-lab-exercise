@@ -1,10 +1,7 @@
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
     email VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
-    recipe_id INT, 
-    grocerylist_id INT,
-    occasions_id INT
+    password VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE ingredients (
@@ -14,18 +11,40 @@ CREATE TABLE ingredients (
 );
 
 CREATE TABLE recipes (
-    recipe_id REFERENCES users(recipe_id),
-    recipe_name VARCHAR(50) NOT NULL,
-    ingredients_id INT NOT NULL REFERENCES ingredients(ingredients_id), 
+    recipe_id INT SERIAL PRIMARY KEY,
+    recipe_name VARCHAR(50) NOT NULL, 
     instructions VARCHAR(50) NOT NULL,
     prep_time INT,
-    security VARCHAR(50) NOT NULL
+    is_private BOOLEAN
 );
 
--- CREATE TABLE ()
--- CREATE TABLE ()
--- CREATE TABLE ()
--- CREATE TABLE ()
+-- NEED A MIDDLE TABLE FOR MANY TO MANY RELATIONSHIP TABLES
+-- MANY TO MANY TABLES ARE ACTUALLY TWO ONE TO ONE RELATIONSHIPS
+--  STORES RELATIONSHIP BETWEEN RECIPES AND INGREDIENTS
+CREATE TABLE recipe_ingredients (
+    recipe_ingredients_id SERIAL PRIMARY KEY,
+    recipe_id REFERENCES recipes(recipe_id),
+    ingredients_id INT REFERENCES ingredients(ingredients_id)
+);
+
+CREATE TABLE recipe_occasions (
+    recipe_occasions_id SERIAL PRIMARY KEY,
+    recipe_id REFERENCES recipes(recipe_id),
+    occasions_id REFERENCES users(occasions_id)
+);
+
+CREATE TABLE occasions (
+    occasions_id REFERENCES users(occasions_id),
+    name VARCHAR(50) NOT NULL,
+    date DATE,
+    time TIME,
+    recipe_id REFERENCES users(recipe_id)
+)
+
+CREATE TABLE grocery_list (
+    grocerylist_id REFERENCES users(grocerylist_id)
+    ingredient_id REFERENCES ingredients(ingredients_id)
+)
 
 -- SELECT * FROM users;
 -- SELECT * FROM recipes;
