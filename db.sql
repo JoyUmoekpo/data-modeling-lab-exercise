@@ -53,3 +53,5 @@ CREATE TABLE grocery_list (
 -- DROP TABLE users;
 -- DROP TABLE recipes;
 -- DROP TABLE ingredients
+
+-- MAKE MAIN TABLES FIRST AND THEN THE MIDDLE TABLES
